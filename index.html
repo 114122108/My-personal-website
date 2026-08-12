@@ -1,585 +1,184 @@
-<!-- Design System -->
 <!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI NEXUS portfolio website for AI agent expert and student research." />
+    <title>AI NEXUS | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a href="#top" class="brand" aria-label="AI NEXUS home">AI NEXUS</a>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI NEXUS - Portfolio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@450;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-variant": "#2d3449",
-                      "inverse-surface": "#dae2fd",
-                      "on-primary": "#003640",
-                      "on-secondary-fixed": "#23005c",
-                      "secondary-fixed-dim": "#d0bcff",
-                      "surface-tint": "#4cd7f6",
-                      "error-container": "#93000a",
-                      "surface-container": "#171f33",
-                      "on-tertiary-fixed": "#002113",
-                      "on-surface": "#dae2fd",
-                      "on-background": "#dae2fd",
-                      "on-tertiary": "#003824",
-                      "surface-container-highest": "#2d3449",
-                      "surface-container-low": "#131b2e",
-                      "secondary": "#d0bcff",
-                      "on-surface-variant": "#bcc9cd",
-                      "on-primary-fixed": "#001f26",
-                      "surface-container-high": "#222a3d",
-                      "primary-container": "#06b6d4",
-                      "outline-variant": "#3d494c",
-                      "surface-dim": "#0b1326",
-                      "surface-container-lowest": "#060e20",
-                      "on-primary-fixed-variant": "#004e5c",
-                      "primary-fixed-dim": "#4cd7f6",
-                      "inverse-primary": "#00687a",
-                      "primary-fixed": "#acedff",
-                      "error": "#ffb4ab",
-                      "secondary-container": "#571bc1",
-                      "on-tertiary-fixed-variant": "#005236",
-                      "primary": "#4cd7f6",
-                      "surface": "#0b1326",
-                      "tertiary": "#4edea3",
-                      "tertiary-container": "#1bbd85",
-                      "on-secondary-container": "#c4abff",
-                      "on-error-container": "#ffdad6",
-                      "surface-bright": "#31394d",
-                      "tertiary-fixed": "#6ffbbe",
-                      "outline": "#869397",
-                      "on-secondary": "#3c0091",
-                      "on-tertiary-container": "#00452e",
-                      "secondary-fixed": "#e9ddff",
-                      "on-secondary-fixed-variant": "#5516be",
-                      "on-primary-container": "#00424f",
-                      "inverse-on-surface": "#283044",
-                      "on-error": "#690005",
-                      "tertiary-fixed-dim": "#4edea3",
-                      "background": "#0b1326"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "margin-mobile": "16px",
-                      "gutter": "24px",
-                      "unit": "8px",
-                      "container-max": "1280px",
-                      "margin-desktop": "48px"
-              },
-              "fontFamily": {
-                      "headline-md": ["Inter"],
-                      "headline-xl-mobile": ["Inter"],
-                      "label-caps": ["JetBrains Mono"],
-                      "code-sm": ["JetBrains Mono"],
-                      "headline-xl": ["Inter"],
-                      "body-lg": ["Inter"],
-                      "body-md": ["Inter"],
-                      "headline-lg": ["Inter"]
-              },
-              "fontSize": {
-                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                      "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                      "code-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "450"}],
-                      "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
-              }
-            }
-          }
-        }
-    </script>
-<style>
-        /* Minimalist SkeletonUI Glow Effects */
-        .glow-card {
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .glow-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(45deg, transparent, transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        .glow-card:hover {
-            box-shadow: 0 0 15px -5px var(--primary-cyan, #4cd7f6);
-        }
-        .glow-card:hover::before {
-            background: linear-gradient(45deg, #4cd7f6, #d0bcff);
-        }
-        
-        /* Grid Background Pattern */
-        .grid-bg {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(134, 147, 151, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(134, 147, 151, 0.05) 1px, transparent 1px);
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col grid-bg">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
-<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed-dim cursor-pointer">
-                AI NEXUS
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-panel" id="nav-panel">
+          <div class="nav-links">
+            <a href="#education">Education</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <button type="button" class="theme-toggle" id="theme-toggle-button" aria-label="Toggle color theme">
+            <span class="material-symbols-outlined" aria-hidden="true">light_mode</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top" class="container page-shell">
+      <section class="hero section-block">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          System online
+        </div>
+
+        <h1>
+          Building the Future of<br />
+          <span class="gradient-text">Synthetic Intelligence</span>
+        </h1>
+
+        <p class="lead">
+          AI Agent Expert &amp; Information Systems Management Student at Tzu Chi University. Focusing on autonomous architectures,
+          LLM fine-tuning, and deterministic output structuring.
+        </p>
+
+        <div class="cta-row">
+          <a href="#projects" class="button primary">View research</a>
+          <a href="#contact" class="button secondary">Contact</a>
+        </div>
+      </section>
+
+      <section id="education" class="section-block info-panel">
+        <h2>Academic Foundation</h2>
+
+        <div class="education-card glass-card">
+          <div class="icon-wrap">
+            <span class="material-symbols-outlined" aria-hidden="true">school</span>
+          </div>
+
+          <div class="content">
+            <div class="card-header">
+              <h3>Tzu Chi University</h3>
+              <span class="status-badge">Current</span>
             </div>
-<div class="hidden md:flex gap-8 items-center h-full">
-<a class="h-full flex items-center text-primary dark:text-primary-fixed-dim border-b-2 border-primary cursor-pointer transition-transform active:scale-95" href="#">Education</a>
-<a class="h-full flex items-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 cursor-pointer active:scale-95" href="#expertise">Expertise</a>
-<a class="h-full flex items-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 cursor-pointer active:scale-95" href="#projects">Projects</a>
-<a class="h-full flex items-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all duration-300 cursor-pointer active:scale-95" href="#contact">Contact</a>
-</div>
-<div class="flex items-center">
-<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 p-2 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
-</button>
-</div>
-</div>
-</nav>
-<main class="flex-grow pt-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-<!-- Hero Section -->
-<section class="py-24 md:py-32 flex flex-col items-start gap-8 relative">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps mb-4">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                SYSTEM ONLINE
-            </div>
-<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface max-w-3xl">
-                Building the Future of <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Synthetic Intelligence</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                AI Agent Expert &amp; Information Systems Management Student at Tzu Chi University. Focusing on autonomous architectures, LLM fine-tuning, and deterministic output structuring.
+
+            <p class="accent">Information Systems Management (ISM)</p>
+            <p>
+              Rigorous academic focus on complex systems architecture, data structures, and the theoretical underpinnings of
+              machine learning. Bridging the gap between classical computer science paradigms and modern neural architectures.
             </p>
-<div class="flex gap-4 mt-8">
-<button class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-primary-fixed transition-colors active:scale-95">
-                    VIEW RESEARCH
-                </button>
-<button class="bg-transparent border border-outline text-on-surface px-6 py-3 rounded font-label-caps text-label-caps hover:border-primary hover:text-primary transition-all active:scale-95">
-                    CONTACT
-                </button>
-</div>
-</section>
-<!-- Academic Foundation -->
-<section class="py-24 border-t border-outline-variant/30" id="education">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Academic Foundation</h2>
-<div class="bg-surface-container rounded-xl p-8 border border-white/5 glow-card relative overflow-hidden">
-<!-- Abstract structural element -->
-<div class="absolute -right-20 -top-20 w-64 h-64 border border-outline-variant/20 rounded-full opacity-20 pointer-events-none"></div>
-<div class="absolute -right-10 -top-10 w-48 h-48 border border-outline-variant/30 rounded-full opacity-20 pointer-events-none"></div>
-<div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
-<div class="flex-shrink-0 w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center border border-outline/20 text-primary">
-<span class="material-symbols-outlined text-4xl" data-icon="school">school</span>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-2">
-<h3 class="font-headline-md text-headline-md text-on-surface">Tzu Chi University</h3>
-<span class="px-2 py-1 rounded bg-surface-variant text-on-surface-variant font-label-caps text-label-caps border border-outline/10">CURRENT</span>
-</div>
-<p class="font-body-lg text-body-lg text-primary mb-4">Information Systems Management (ISM)</p>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-                            Rigorous academic focus on complex systems architecture, data structures, and the theoretical underpinnings of machine learning. Bridging the gap between classical computer science paradigms and modern neural architectures.
-                        </p>
-<div class="flex gap-2 mt-6 flex-wrap">
-<span class="px-3 py-1 bg-primary/5 text-primary border border-primary/20 rounded font-label-caps text-label-caps">Systems Architecture</span>
-<span class="px-3 py-1 bg-primary/5 text-primary border border-primary/20 rounded font-label-caps text-label-caps">Data Modeling</span>
-<span class="px-3 py-1 bg-primary/5 text-primary border border-primary/20 rounded font-label-caps text-label-caps">Algorithms</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- AI Agent Specialization -->
-<section class="py-24 border-t border-outline-variant/30" id="expertise">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">AI Agent Specialization</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="bg-surface-container-low rounded-lg p-6 border border-white/5 glow-card h-full flex flex-col">
-<div class="mb-6 text-secondary">
-<span class="material-symbols-outlined text-3xl" data-icon="memory">memory</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Autonomous Agents</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Designing self-directed systems capable of multi-step reasoning, tool use, and environmental interaction utilizing frameworks like AutoGen and LangChain.
-                    </p>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container-low rounded-lg p-6 border border-white/5 glow-card h-full flex flex-col">
-<div class="mb-6 text-tertiary">
-<span class="material-symbols-outlined text-3xl" data-icon="schema">schema</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-3">RAG Architectures</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Implementing high-precision Retrieval-Augmented Generation pipelines using vector databases (Chroma, Pinecone) and semantic chunking strategies for enterprise data grounding.
-                    </p>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container-low rounded-lg p-6 border border-white/5 glow-card h-full flex flex-col">
-<div class="mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl" data-icon="code_blocks">code_blocks</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Structured Output</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Enforcing deterministic JSON/XML outputs from stochastic models using grammar constraints, function calling APIs, and prompt engineering methodologies.
-                    </p>
-</div>
-</div>
-</section>
-<!-- Custom LLM Research -->
-<section class="py-24 border-t border-outline-variant/30" id="projects">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Custom LLM Research</h2>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Image Side -->
-<div class="lg:col-span-5 h-64 lg:h-auto rounded-xl overflow-hidden border border-outline/20 relative">
-<div class="absolute inset-0 bg-surface-container mix-blend-overlay z-10"></div>
-<img class="w-full h-full object-cover filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="A highly detailed visualization of a neural network being optimized, featuring glowing data pathways transitioning from cool cyan to deep purple over a dark, technical background. Abstract representations of matrix multiplication and data nodes are visible in high resolution, creating a minimalist yet sophisticated technology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgrfu7__KTTQWvM7pzEmT79cX1Okn0uhjKHCfp0YeN2QLSzlU2vQ03jBscaCF_2voQOiuGj1zbKCOgqZokL_v9I5C6gHVhTZ4tumPDDw7QTwMqqyEg1rpiCfV9CK28QKpPriBwKNysWNKJpivXqostqHNUOKEazqpdg33jLP-3674IRjEaDrsVO3L01oR1ATk4Yv0W9xJjzn3kefhdUTgqiMTHkUUj436DqE-boHV16MvCJZIv_ue9"/>
-</div>
-<!-- Content Side -->
-<div class="lg:col-span-7 bg-surface-container rounded-xl p-8 border border-white/5 glow-card">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-secondary" data-icon="science">science</span>
-<h3 class="font-headline-md text-headline-md text-on-surface">LoRA Architecture Progress</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                        Current research focuses on Low-Rank Adaptation (LoRA) techniques for efficiently fine-tuning large language models on consumer-grade hardware. By injecting trainable rank decomposition matrices into the transformer architecture, we achieve competitive performance while drastically reducing VRAM requirements.
-                    </p>
-<div class="bg-surface-dim rounded border border-outline/20 p-4 mb-6 font-code-sm text-code-sm text-primary overflow-x-auto">
-<pre><code># Model Loading Configuration
+
+            <div class="tag-list">
+              <span>Systems Architecture</span>
+              <span>Data Modeling</span>
+              <span>Algorithms</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="expertise" class="section-block">
+        <h2>AI Agent Specialization</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card glass-card">
+            <div class="feature-icon cyan">
+              <span class="material-symbols-outlined" aria-hidden="true">memory</span>
+            </div>
+            <h3>Autonomous Agents</h3>
+            <p>
+              Designing self-directed systems capable of multi-step reasoning, tool use, and environmental interaction using
+              frameworks like AutoGen and LangChain.
+            </p>
+          </article>
+
+          <article class="feature-card glass-card">
+            <div class="feature-icon purple">
+              <span class="material-symbols-outlined" aria-hidden="true">schema</span>
+            </div>
+            <h3>RAG Architectures</h3>
+            <p>
+              Implementing high-precision Retrieval-Augmented Generation pipelines using vector databases and semantic chunking
+              strategies for enterprise data grounding.
+            </p>
+          </article>
+
+          <article class="feature-card glass-card">
+            <div class="feature-icon green">
+              <span class="material-symbols-outlined" aria-hidden="true">code_blocks</span>
+            </div>
+            <h3>Structured Output</h3>
+            <p>
+              Enforcing deterministic JSON/XML outputs from stochastic models with grammar constraints, function calling APIs,
+              and prompt engineering methodologies.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section-block project-block">
+        <h2>Custom LLM Research</h2>
+
+        <div class="project-layout">
+          <div class="project-image" aria-label="AI research visualization"></div>
+
+          <article class="project-card glass-card">
+            <div class="project-heading">
+              <span class="material-symbols-outlined" aria-hidden="true">science</span>
+              <h3>LoRA Architecture Progress</h3>
+            </div>
+
+            <p>
+              Current research focuses on Low-Rank Adaptation (LoRA) techniques for efficiently fine-tuning large language
+              models on consumer-grade hardware. By injecting trainable rank decomposition matrices into the transformer
+              architecture, we achieve competitive performance while reducing VRAM requirements.
+            </p>
+
+            <pre class="code-block"><code># Model Loading Configuration
 import torch
 from peft import LoraConfig, get_peft_model
 
 config = LoraConfig(
-    r=16, 
+    r=16,
     lora_alpha=32,
     target_modules=["q_proj", "v_proj"],
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM"
 )</code></pre>
-</div>
-<div class="flex flex-wrap gap-4">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-label-caps text-on-surface">PEFT</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-label-caps text-on-surface">PyTorch</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-caps text-label-caps text-on-surface">Transformers</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 w-full py-12">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-gutter">
-<div class="font-headline-md text-headline-md text-on-surface font-bold">
-                AI NEXUS
-            </div>
-<div class="font-label-caps text-label-caps text-on-surface-variant text-center">
-                © 2024 AI Agent Expert | Tzu Chi University
-            </div>
-<div class="flex gap-6">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">GitHub</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">LinkedIn</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">ResearchGate</a>
-</div>
-</div>
-</footer>
-</body></html>
 
-<!-- Portfolio - AI Agent Expert -->
-<!DOCTYPE html>
+            <div class="tech-list">
+              <span>PEFT</span>
+              <span>PyTorch</span>
+              <span>Transformers</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI NEXUS - Portfolio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "background": "#f7faf8",
-                        "primary-fixed": "#cbe9dc",
-                        "surface-container-highest": "#e0e3e1",
-                        "on-error-container": "#93000a",
-                        "surface-container-high": "#e6e9e7",
-                        "inverse-surface": "#2d3130",
-                        "on-error": "#ffffff",
-                        "secondary-fixed-dim": "#cdc0e8",
-                        "error": "#ba1a1a",
-                        "surface-container-low": "#f1f4f2",
-                        "on-primary-container": "#1f3930",
-                        "primary-fixed-dim": "#afcdc0",
-                        "on-secondary-fixed-variant": "#4b4263",
-                        "surface-bright": "#f7faf8",
-                        "on-tertiary": "#ffffff",
-                        "primary": "#49645a",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-container": "#343431",
-                        "surface-tint": "#49645a",
-                        "outline": "#727975",
-                        "tertiary": "#5e5e5b",
-                        "on-surface-variant": "#424845",
-                        "on-primary-fixed-variant": "#314c42",
-                        "on-primary-fixed": "#042018",
-                        "on-tertiary-fixed-variant": "#474744",
-                        "primary-container": "#86a397",
-                        "surface-container": "#ebeeed",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-fixed-dim": "#c8c6c2",
-                        "on-secondary": "#ffffff",
-                        "tertiary-container": "#9e9d99",
-                        "on-secondary-fixed": "#1f1635",
-                        "secondary-container": "#e1d4fd",
-                        "tertiary-fixed": "#e4e2dd",
-                        "error-container": "#ffdad6",
-                        "surface-dim": "#d7dbd9",
-                        "on-surface": "#181c1c",
-                        "on-background": "#181c1c",
-                        "inverse-primary": "#afcdc0",
-                        "surface-variant": "#e0e3e1",
-                        "surface": "#f7faf8",
-                        "secondary": "#63597c",
-                        "secondary-fixed": "#e9ddff",
-                        "outline-variant": "#c1c8c4",
-                        "inverse-on-surface": "#eef1f0",
-                        "on-tertiary-fixed": "#1b1c19",
-                        "on-secondary-container": "#645a7c"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "1rem",
-                        "lg": "2rem",
-                        "xl": "3rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "unit": "8px",
-                        "container-padding": "40px",
-                        "stack-md": "24px",
-                        "section-gap": "80px",
-                        "stack-sm": "12px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Inter"],
-                        "display": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "label-md": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "headline-lg-mobile": ["Inter"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "300"}],
-                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
-                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "400"}]
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-surface-variant">
-<div class="flex justify-between items-center h-16 px-6 md:px-12 max-w-[1280px] mx-auto">
-<div class="font-headline-md text-headline-md text-primary cursor-pointer">
-                AI NEXUS
-            </div>
-<div class="hidden md:flex gap-8 items-center h-full">
-<a class="h-full flex items-center text-primary border-b-2 border-primary cursor-pointer transition-transform active:scale-95" href="#">Education</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-all duration-300 cursor-pointer active:scale-95" href="#expertise">Expertise</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-all duration-300 cursor-pointer active:scale-95" href="#projects">Projects</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-primary transition-all duration-300 cursor-pointer active:scale-95" href="#contact">Contact</a>
-</div>
-<div class="flex items-center">
-<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 p-2 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
-</button>
-</div>
-</div>
-</nav>
-<main class="flex-grow pt-24 px-6 md:px-12 max-w-[1280px] mx-auto w-full">
-<!-- Hero Section -->
-<section class="py-24 md:py-32 flex flex-col items-start gap-8 relative">
-<h1 class="font-display text-display text-on-surface max-w-3xl">
-                Building the Future of <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Synthetic Intelligence</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                AI Agent Expert &amp; Information Systems Management Student at Tzu Chi University. Focusing on autonomous architectures, LLM fine-tuning, and deterministic output structuring.
-            </p>
-<div class="flex gap-4 mt-8">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-95 shadow-sm">
-                    VIEW RESEARCH
-                </button>
-<button class="bg-surface-container text-on-surface px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-colors active:scale-95 shadow-sm">
-                    CONTACT
-                </button>
-</div>
-</section>
-<!-- Academic Foundation -->
-<section class="py-24 border-t border-surface-variant" id="education">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Academic Foundation</h2>
-<div class="bg-secondary-fixed rounded-3xl p-10 relative overflow-hidden shadow-sm">
-<!-- Abstract structural element -->
-<div class="absolute -right-20 -top-20 w-64 h-64 border border-secondary/10 rounded-full opacity-50 pointer-events-none"></div>
-<div class="absolute -right-10 -top-10 w-48 h-48 border border-secondary/10 rounded-full opacity-50 pointer-events-none"></div>
-<div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
-<div class="flex-shrink-0 w-16 h-16 bg-surface rounded-2xl flex items-center justify-center text-secondary shadow-sm">
-<span class="material-symbols-outlined text-4xl" data-icon="school">school</span>
-</div>
-<div>
-<div class="flex items-center gap-4 mb-2">
-<h3 class="font-headline-md text-headline-md text-on-surface">Tzu Chi University</h3>
-<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">CURRENT</span>
-</div>
-<p class="font-body-lg text-body-lg text-secondary mb-4">Information Systems Management (ISM)</p>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-                            Rigorous academic focus on complex systems architecture, data structures, and the theoretical underpinnings of machine learning. Bridging the gap between classical computer science paradigms and modern neural architectures.
-                        </p>
-<div class="flex gap-3 mt-8 flex-wrap">
-<span class="px-4 py-2 bg-surface rounded-full text-secondary font-label-sm text-label-sm shadow-sm">Systems Architecture</span>
-<span class="px-4 py-2 bg-surface rounded-full text-secondary font-label-sm text-label-sm shadow-sm">Data Modeling</span>
-<span class="px-4 py-2 bg-surface rounded-full text-secondary font-label-sm text-label-sm shadow-sm">Algorithms</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- AI Agent Specialization -->
-<section class="py-24 border-t border-surface-variant" id="expertise">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">AI Agent Specialization</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="bg-primary-fixed rounded-3xl p-8 h-full flex flex-col shadow-sm">
-<div class="mb-8 w-12 h-12 bg-surface rounded-2xl flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="memory">memory</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Autonomous Agents</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Designing self-directed systems capable of multi-step reasoning, tool use, and environmental interaction utilizing frameworks like AutoGen and LangChain.
-                    </p>
-</div>
-<!-- Card 2 -->
-<div class="bg-secondary-fixed rounded-3xl p-8 h-full flex flex-col shadow-sm">
-<div class="mb-8 w-12 h-12 bg-surface rounded-2xl flex items-center justify-center text-secondary shadow-sm">
-<span class="material-symbols-outlined" data-icon="schema">schema</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">RAG Architectures</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Implementing high-precision Retrieval-Augmented Generation pipelines using vector databases (Chroma, Pinecone) and semantic chunking strategies for enterprise data grounding.
-                    </p>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container rounded-3xl p-8 h-full flex flex-col shadow-sm">
-<div class="mb-8 w-12 h-12 bg-surface rounded-2xl flex items-center justify-center text-tertiary shadow-sm">
-<span class="material-symbols-outlined" data-icon="code_blocks">code_blocks</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Structured Output</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
-                        Enforcing deterministic JSON/XML outputs from stochastic models using grammar constraints, function calling APIs, and prompt engineering methodologies.
-                    </p>
-</div>
-</div>
-</section>
-<!-- Custom LLM Research -->
-<section class="py-24 border-t border-surface-variant" id="projects">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Custom LLM Research</h2>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Image Side -->
-<div class="lg:col-span-5 h-64 lg:h-auto rounded-3xl overflow-hidden relative shadow-sm">
-<img class="w-full h-full object-cover" data-alt="A highly detailed visualization of a neural network being optimized, featuring glowing data pathways transitioning from cool cyan to deep purple over a dark, technical background. Abstract representations of matrix multiplication and data nodes are visible in high resolution, creating a minimalist yet sophisticated technology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgrfu7__KTTQWvM7pzEmT79cX1Okn0uhjKHCfp0YeN2QLSzlU2vQ03jBscaCF_2voQOiuGj1zbKCOgqZokL_v9I5C6gHVhTZ4tumPDDw7QTwMqqyEg1rpiCfV9CK28QKpPriBwKNysWNKJpivXqostqHNUOKEazqpdg33jLP-3674IRjEaDrsVO3L01oR1ATk4Yv0W9xJjzn3kefhdUTgqiMTHkUUj436DqE-boHV16MvCJZIv_ue9"/>
-</div>
-<!-- Content Side -->
-<div class="lg:col-span-7 bg-surface-container rounded-3xl p-10 shadow-sm">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-10 h-10 bg-surface rounded-xl flex items-center justify-center text-primary shadow-sm">
-<span class="material-symbols-outlined" data-icon="science">science</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">LoRA Architecture Progress</h3>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-                        Current research focuses on Low-Rank Adaptation (LoRA) techniques for efficiently fine-tuning large language models on consumer-grade hardware. By injecting trainable rank decomposition matrices into the transformer architecture, we achieve competitive performance while drastically reducing VRAM requirements.
-                    </p>
-<div class="bg-surface rounded-2xl p-6 mb-8 text-on-surface-variant shadow-inner overflow-x-auto text-sm font-mono">
-<pre><code><span class="text-outline"># Model Loading Configuration</span>
-<span class="text-secondary">import</span> torch
-<span class="text-secondary">from</span> peft <span class="text-secondary">import</span> LoraConfig, get_peft_model
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">AI NEXUS</div>
+        <p>© 2024 AI Agent Expert | Tzu Chi University</p>
+        <div class="footer-links">
+          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.researchgate.net" target="_blank" rel="noreferrer">ResearchGate</a>
+        </div>
+      </div>
+    </footer>
 
-config = LoraConfig(
-    r=<span class="text-primary">16</span>, 
-    lora_alpha=<span class="text-primary">32</span>,
-    target_modules=[<span class="text-primary">"q_proj"</span>, <span class="text-primary">"v_proj"</span>],
-    lora_dropout=<span class="text-primary">0.05</span>,
-    bias=<span class="text-primary">"none"</span>,
-    task_type=<span class="text-primary">"CAUSAL_LM"</span>
-)</code></pre>
-</div>
-<div class="flex flex-wrap gap-4">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">PEFT</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">PyTorch</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Transformers</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-low w-full py-12 mt-12">
-<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 max-w-[1280px] mx-auto gap-gutter">
-<div class="font-headline-md text-headline-md text-primary">
-                AI NEXUS
-            </div>
-<div class="font-label-sm text-label-sm text-on-surface-variant text-center">
-                © 2024 AI Agent Expert | Tzu Chi University
-            </div>
-<div class="flex gap-6">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">GitHub</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">ResearchGate</a>
-</div>
-</div>
-</footer>
-</body></html>
+    <script src="script.js"></script>
+  </body>
+</html>
