@@ -43,6 +43,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
   background:
     radial-gradient(circle at top left, rgba(255, 105, 211, 0.18), transparent 30%),
@@ -906,6 +907,42 @@ blockquote {
   font-weight: 600;
 }
 
+.closing-section {
+  padding-top: 0;
+}
+
+.closing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 105, 211, 0.08), rgba(126, 231, 255, 0.08), rgba(199, 183, 255, 0.08));
+}
+
+.closing-card h2 {
+  margin: 0;
+  max-width: 700px;
+}
+
+.closing-email {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.closing-email span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.closing-email a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .info-panel {
   border-top: 1px solid var(--border);
 }
@@ -1163,6 +1200,10 @@ html.light .site-footer {
     grid-template-columns: 1fr;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+
   .profile-visual {
     max-width: 420px;
     width: 100%;
@@ -1175,17 +1216,18 @@ html.light .site-footer {
 
   .nav-panel {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
+    left: 0.75rem;
+    right: 0.75rem;
     top: calc(100% + 0.75rem);
-    background: rgba(11, 19, 38, 0.92);
+    background: rgba(20, 11, 29, 0.96);
     border: 1px solid var(--border);
     border-radius: 1rem;
-    box-shadow: 0 20px 40px var(--shadow);
+    box-shadow: 0 22px 42px var(--shadow);
     padding: 1rem;
     display: none;
     align-items: flex-start;
     justify-content: space-between;
+    backdrop-filter: blur(12px);
   }
 
   html.light .nav-panel {
@@ -1206,6 +1248,7 @@ html.light .site-footer {
   .nav-links a {
     width: 100%;
     padding: 0.35rem 0;
+    font-size: 0.96rem;
   }
 
   .feature-grid,
@@ -1245,8 +1288,29 @@ html.light .site-footer {
     width: min(100% - 1rem, 1160px);
   }
 
+  .site-header {
+    background: rgba(20, 11, 29, 0.88);
+  }
+
+  .navbar {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
   h1 {
     letter-spacing: -0.05em;
+    font-size: clamp(2.2rem, 11vw, 3.3rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
+
+  .lead {
+    font-size: 1rem;
   }
 
   .eyebrow {
@@ -1254,10 +1318,48 @@ html.light .site-footer {
     font-size: 0.66rem;
   }
 
+  .hero-meta {
+    gap: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
   .project-card,
   .feature-card,
-  .education-card {
+  .education-card,
+  .about-card,
+  .experience-card,
+  .cert-card {
     padding: 1rem;
+  }
+
+  .interest-board {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-header {
+    grid-template-columns: 84px minmax(0, 1fr) 28px;
+    gap: 0.7rem;
+    padding: 1rem;
+  }
+
+  .timeline-header span:nth-child(2) {
+    font-size: 0.92rem;
+  }
+
+  .contact-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-meta span {
+    display: block;
+    padding-left: 0.8rem;
+  }
+
+  .button {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
   }
 }
 
