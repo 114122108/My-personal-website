@@ -1,33 +1,7 @@
-const rootElement = document.documentElement;
-const themeToggleButton = document.getElementById('theme-toggle-button');
 const navToggleButton = document.getElementById('nav-toggle');
 const navPanel = document.getElementById('nav-panel');
 const navLinks = document.querySelectorAll('.nav-links a');
-
-function applyTheme(theme) {
-  const isDark = theme === 'dark';
-  rootElement.classList.toggle('light', !isDark);
-  rootElement.classList.toggle('dark', isDark);
-  localStorage.setItem('theme', theme);
-
-  if (themeToggleButton) {
-    const icon = themeToggleButton.querySelector('.material-symbols-outlined');
-    if (icon) {
-      icon.textContent = isDark ? 'light_mode' : 'dark_mode';
-    }
-  }
-}
-
-const savedTheme = localStorage.getItem('theme');
-const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-applyTheme(preferredTheme);
-
-if (themeToggleButton) {
-  themeToggleButton.addEventListener('click', () => {
-    const nextTheme = rootElement.classList.contains('light') ? 'dark' : 'light';
-    applyTheme(nextTheme);
-  });
-}
+const timelineItems = document.querySelectorAll('.timeline-item');
 
 if (navToggleButton && navPanel) {
   navToggleButton.addEventListener('click', () => {
@@ -47,18 +21,99 @@ navLinks.forEach((link) => {
   });
 });
 
-const currentPath = window.location.hash || '#top';
-navLinks.forEach((link) => {
-  const linkTarget = link.getAttribute('href');
-  if (linkTarget === currentPath || (currentPath === '#top' && linkTarget === '#education')) {
-    link.classList.add('active');
-  }
-});
-
-window.addEventListener('hashchange', () => {
+const setActiveLink = () => {
+  const hash = window.location.hash || '#top';
   navLinks.forEach((link) => {
-    const isActive = link.getAttribute('href') === window.location.hash;
-    link.classList.toggle('active', isActive);
+    const match = link.getAttribute('href') === hash;
+    link.classList.toggle('active', match);
+  });
+};
+
+setActiveLink();
+window.addEventListener('hashchange', setActiveLink);
+
+timelineItems.forEach((item) => {
+  const button = item.querySelector('.timeline-header');
+  if (!button) return;
+
+  button.addEventListener('click', () => {
+    const isOpen = item.classList.contains('is-open');
+    timelineItems.forEach((timelineItem) => {
+      timelineItem.classList.remove('is-open');
+    });
+
+    if (!isOpen) {
+      item.classList.add('is-open');
+    }
   });
 });
+
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2, active: false };
+
+const particleCount = Math.min(90, Math.max(45, Math.floor((window.innerWidth * window.innerHeight) / 18)));
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth * window.devicePixelRatio;
+  canvas.height = window.innerHeight * window.devicePixelRatio;
+  canvas.style.width = `${window.innerWidth}px`;
+  canvas.style.height = `${window.innerHeight}px`;
+  ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+
+  particles = Array.from({ length: particleCount }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 2.4 + 1,
+    vx: (Math.random() - 0.5) * 0.7,
+    vy: (Math.random() - 0.5) * 0.7,
+    alpha: Math.random() * 0.6 + 0.2
+  }));
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+  particles.forEach((particle) => {
+    particle.x += particle.vx;
+    particle.y += particle.vy;
+
+    if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -1;
+    if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -1;
+
+    const dx = pointer.x - particle.x;
+    const dy = pointer.y - particle.y;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (pointer.active && distance < 160) {
+      const angle = Math.atan2(dy, dx);
+      const force = (160 - distance) / 160;
+      particle.x -= Math.cos(angle) * force * 1.5;
+      particle.y -= Math.sin(angle) * force * 1.5;
+    }
+
+    const glow = pointer.active ? 1.5 : 1;
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(127, 229, 255, ${particle.alpha})`;
+    ctx.arc(particle.x, particle.y, particle.r * glow, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(drawParticles);
+}
+
+window.addEventListener('pointermove', (event) => {
+  pointer.x = event.clientX;
+  pointer.y = event.clientY;
+  pointer.active = true;
+});
+
+window.addEventListener('pointerleave', () => {
+  pointer.active = false;
+});
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+drawParticles();
 

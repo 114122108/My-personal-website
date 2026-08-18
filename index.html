@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AI NEXUS portfolio website for AI agent expert and student research." />
-    <title>AI NEXUS | Portfolio</title>
+    <meta
+      name="description"
+      content="Yola Lizzy Maganha — international student from Mozambique studying in Taiwan, sharing her journey in education, service, technology, and community building."
+    />
+    <title>Yola Maganha | Learning. Serving. Creating. Growing.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
     <header class="site-header">
       <nav class="navbar container" aria-label="Main navigation">
-        <a href="#top" class="brand" aria-label="AI NEXUS home">AI NEXUS</a>
+        <a href="#top" class="brand" aria-label="Yola Maganha home">Yola</a>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
           <span></span>
           <span></span>
           <span></span>
@@ -23,159 +31,442 @@
 
         <div class="nav-panel" id="nav-panel">
           <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#journey">Journey</a>
             <a href="#education">Education</a>
-            <a href="#expertise">Expertise</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
           </div>
-          <button type="button" class="theme-toggle" id="theme-toggle-button" aria-label="Toggle color theme">
-            <span class="material-symbols-outlined" aria-hidden="true">light_mode</span>
-          </button>
         </div>
       </nav>
     </header>
 
-    <main id="top" class="container page-shell">
-      <section class="hero section-block">
-        <div class="eyebrow">
-          <span class="pulse-dot"></span>
-          System online
-        </div>
-
-        <h1>
-          Building the Future of<br />
-          <span class="gradient-text">Synthetic Intelligence</span>
-        </h1>
-
-        <p class="lead">
-          AI Agent Expert &amp; Information Systems Management Student at Tzu Chi University. Focusing on autonomous architectures,
-          LLM fine-tuning, and deterministic output structuring.
-        </p>
-
-        <div class="cta-row">
-          <a href="#projects" class="button primary">View research</a>
-          <a href="#contact" class="button secondary">Contact</a>
-        </div>
-      </section>
-
-      <section id="education" class="section-block info-panel">
-        <h2>Academic Foundation</h2>
-
-        <div class="education-card glass-card">
-          <div class="icon-wrap">
-            <span class="material-symbols-outlined" aria-hidden="true">school</span>
+    <main id="top" class="page-shell">
+      <section class="hero container section-block">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span>
+            International student journey
           </div>
 
-          <div class="content">
-            <div class="card-header">
-              <h3>Tzu Chi University</h3>
-              <span class="status-badge">Current</span>
-            </div>
+          <h1>
+            Yola Maganha
+            <span class="subtitle">From Mozambique 🇲🇿 to Taiwan 🇹🇼</span>
+          </h1>
 
-            <p class="accent">Information Systems Management (ISM)</p>
-            <p>
-              Rigorous academic focus on complex systems architecture, data structures, and the theoretical underpinnings of
-              machine learning. Bridging the gap between classical computer science paradigms and modern neural architectures.
-            </p>
+          <p class="lead">Learning. Serving. Creating. Growing.</p>
 
-            <div class="tag-list">
-              <span>Systems Architecture</span>
-              <span>Data Modeling</span>
-              <span>Algorithms</span>
-            </div>
+          <div class="cta-row">
+            <a href="#journey" class="button primary">Explore My Journey</a>
+            <a href="#experience" class="button secondary">View My Experience</a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Student at Tzu Chi University</span>
+            <span>International Service Industry Management</span>
           </div>
         </div>
       </section>
 
-      <section id="expertise" class="section-block">
-        <h2>AI Agent Specialization</h2>
+      <section id="about" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">About Me</p>
+          <h2>Growing across cultures, learning with purpose.</h2>
+        </div>
 
-        <div class="feature-grid">
-          <article class="feature-card glass-card">
-            <div class="feature-icon cyan">
-              <span class="material-symbols-outlined" aria-hidden="true">memory</span>
-            </div>
-            <h3>Autonomous Agents</h3>
+        <div class="about-grid">
+          <div class="about-card glass-card">
             <p>
-              Designing self-directed systems capable of multi-step reasoning, tool use, and environmental interaction using
-              frameworks like AutoGen and LangChain.
+              Yola Lizzy Maganha is a Mozambican international student in Taiwan, building her academic and professional journey with
+              curiosity, perseverance, and heart. She is currently studying at Tzu Chi University, where she is learning not only in the
+              classroom but also through daily experiences with language, service, community, and cross-cultural collaboration.
+            </p>
+            <p>
+              Her story is shaped by resilience. Technology and programming became an interest, even when access to a personal computer was
+              limited. She sometimes had to use school computers during class to keep learning and practicing. That experience taught her to
+              make the most of what she had and to keep moving forward despite obstacles.
+            </p>
+          </div>
+
+          <div class="about-card glass-card accent-card">
+            <ul>
+              <li>International education</li>
+              <li>Personal growth</li>
+              <li>Cross-cultural experiences</li>
+              <li>Volunteering and service</li>
+              <li>Technology and digital skills</li>
+              <li>Learning Mandarin</li>
+              <li>Project planning</li>
+              <li>Community involvement</li>
+              <li>Building a meaningful future</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">My Journey</p>
+          <h2>Small steps, meaningful growth.</h2>
+        </div>
+
+        <div class="timeline" aria-label="My journey timeline">
+          <article class="timeline-item is-open">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">2023</span>
+              <span>Completed secondary education in Mozambique</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                This was a foundation year of academics, discipline, and self-discovery. It marked the beginning of a stronger commitment to
+                learning and personal direction.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">2024</span>
+              <span>Began developing academic and professional interests</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                Yola started exploring the paths that would shape her future, including technology, communication, service, and international
+                opportunities.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">2025</span>
+              <span>Started her journey in Taiwan and joined Tzu Chi University</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                This was the start of a new chapter—studying abroad, adapting to a new environment, and discovering the value of community,
+                culture, and perseverance.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">2025–Present</span>
+              <span>University studies, Mandarin learning, volunteering, and personal development</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                Her life in Taiwan has become a space for growth—through study, service, community activities, project work, and learning how to
+                navigate a new culture with confidence.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">2026</span>
+              <span>Continued professional, technological, language, and leadership growth</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                This period is focused on building practical skills, connecting with others, and becoming more prepared to serve communities in
+                meaningful ways.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <button class="timeline-header" type="button">
+              <span class="timeline-year">Future</span>
+              <span>Continue learning, gaining experience, and contributing to communities</span>
+              <span class="timeline-toggle">+</span>
+            </button>
+            <div class="timeline-content">
+              <p>
+                Yola hopes to keep learning, growing, and creating impact in Mozambique and beyond—bringing together values of service,
+                leadership, empathy, and innovation.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Education</p>
+          <h2>Building a future with purpose and knowledge.</h2>
+        </div>
+
+        <div class="education-panel glass-card">
+          <div class="edu-main">
+            <span class="edu-badge">🇹🇼 Taiwan</span>
+            <h3>Tzu Chi University</h3>
+            <p class="edu-degree">Bachelor’s Degree in International Service Industry Management</p>
+            <p class="edu-date">2025–Present</p>
+          </div>
+
+          <div class="edu-secondary">
+            <h4>Previous education in Mozambique</h4>
+            <p>
+              Yola’s earlier academic experience in Mozambique shaped her foundation in discipline, language, and ambition. It laid the ground
+              for her continued academic journey in Taiwan and her growing interest in international service and professional development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Language Certifications</p>
+          <h2>Continuing to grow in communication and connection.</h2>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card glass-card">
+            <div class="cert-top">
+              <span class="cert-icon">English</span>
+              <span class="cert-badge">Certified</span>
+            </div>
+            <h3>TOEIC</h3>
+            <p class="cert-value">CEFR Level: C1</p>
+            <p>Advanced English proficiency with confidence in communication and academic expression.</p>
+          </article>
+
+          <article class="cert-card glass-card">
+            <div class="cert-top">
+              <span class="cert-icon">Mandarin</span>
+              <span class="cert-badge">Learning</span>
+            </div>
+            <h3>TOCFL</h3>
+            <p class="cert-value">Level: B1</p>
+            <p>Intermediate Mandarin proficiency, supported by daily learning, cross-cultural communication, and community experience.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Experience</p>
+          <h2>Learning through service and everyday effort.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card glass-card">
+            <h3>Volunteer &amp; Community Experience</h3>
+            <ul>
+              <li>Volunteering with Tzu Chi and Jing Si activities</li>
+              <li>Environmental awareness and care</li>
+              <li>Community service and outreach</li>
+              <li>Cleaning and shared-space service activities</li>
+              <li>Disaster recovery and service-oriented action</li>
+              <li>Participation in international student activities</li>
+            </ul>
+            <p>
+              Each experience helped Yola learn that service is not only about helping others—it is also about humility, empathy, and understanding
+              what can be gained from caring for a community.
             </p>
           </article>
 
-          <article class="feature-card glass-card">
-            <div class="feature-icon purple">
-              <span class="material-symbols-outlined" aria-hidden="true">schema</span>
-            </div>
-            <h3>RAG Architectures</h3>
+          <article class="experience-card glass-card">
+            <h3>International Student Experience</h3>
+            <ul>
+              <li>Adapting to life in Taiwan</li>
+              <li>Cross-cultural communication</li>
+              <li>Mandarin learning and daily practice</li>
+              <li>Working with students from many countries</li>
+              <li>Building teamwork in a new environment</li>
+            </ul>
             <p>
-              Implementing high-precision Retrieval-Augmented Generation pipelines using vector databases and semantic chunking
-              strategies for enterprise data grounding.
+              Moving from Mozambique to Taiwan has strengthened her ability to adapt, connect, and grow across cultures while staying grounded in
+              her identity and values.
             </p>
           </article>
 
-          <article class="feature-card glass-card">
-            <div class="feature-icon green">
-              <span class="material-symbols-outlined" aria-hidden="true">code_blocks</span>
-            </div>
-            <h3>Structured Output</h3>
+          <article class="experience-card glass-card wide-card">
+            <h3>Technology &amp; Learning</h3>
             <p>
-              Enforcing deterministic JSON/XML outputs from stochastic models with grammar constraints, function calling APIs,
-              and prompt engineering methodologies.
+              Yola became increasingly interested in technology and programming even without regular access to a personal computer. She learned by
+              making the most of available resources, staying disciplined, and continuing to build skills through practice and effort.
+            </p>
+            <p>
+              This story reflects perseverance: not waiting for perfect conditions, but becoming stronger through resourcefulness, curiosity, and a
+              consistent desire to keep learning.
             </p>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="section-block project-block">
-        <h2>Custom LLM Research</h2>
+      <section id="projects" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Projects</p>
+          <h2>Ideas shaped by care, culture, and community.</h2>
+        </div>
 
-        <div class="project-layout">
-          <div class="project-image" aria-label="AI research visualization"></div>
+        <div class="project-grid">
+          <article class="project-card glass-card">
+            <div class="project-tag">🌱 Eco-Minds</div>
+            <h3>Eco-Minds</h3>
+            <p>
+              A project related to waste management in Mozambique and sustainable development, connecting environmental awareness with community
+              responsibility and the Sustainable Development Goals.
+            </p>
+          </article>
 
           <article class="project-card glass-card">
-            <div class="project-heading">
-              <span class="material-symbols-outlined" aria-hidden="true">science</span>
-              <h3>LoRA Architecture Progress</h3>
-            </div>
-
+            <div class="project-tag">🎙️ 異客日記</div>
+            <h3>異客日記 — Stranger’s Diary</h3>
             <p>
-              Current research focuses on Low-Rank Adaptation (LoRA) techniques for efficiently fine-tuning large language
-              models on consumer-grade hardware. By injecting trainable rank decomposition matrices into the transformer
-              architecture, we achieve competitive performance while reducing VRAM requirements.
+              An international student media and storytelling project focused on cultural exchange, personal experiences, and the stories of students
+              navigating new worlds.
             </p>
-
-            <pre class="code-block"><code># Model Loading Configuration
-import torch
-from peft import LoraConfig, get_peft_model
-
-config = LoraConfig(
-    r=16,
-    lora_alpha=32,
-    target_modules=["q_proj", "v_proj"],
-    lora_dropout=0.05,
-    bias="none",
-    task_type="CAUSAL_LM"
-)</code></pre>
-
-            <div class="tech-list">
-              <span>PEFT</span>
-              <span>PyTorch</span>
-              <span>Transformers</span>
-            </div>
           </article>
+
+          <article class="project-card glass-card">
+            <div class="project-tag">💻 Personal Website</div>
+            <h3>Personal Website</h3>
+            <p>
+              This portfolio is itself a project demonstrating Yola’s interest in technology, creativity, and digital communication.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Skills</p>
+          <h2>Strengths shaped by learning and service.</h2>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-group glass-card">
+            <h3>Languages</h3>
+            <div class="skill-tags">
+              <span>Portuguese</span>
+              <span>English — C1</span>
+              <span>Mandarin Chinese — B1</span>
+            </div>
+          </div>
+
+          <div class="skill-group glass-card">
+            <h3>Technology</h3>
+            <div class="skill-tags">
+              <span>Microsoft Word</span>
+              <span>Microsoft PowerPoint</span>
+              <span>Microsoft Excel</span>
+              <span>Canva</span>
+              <span>Information Management</span>
+              <span>Programming fundamentals</span>
+            </div>
+          </div>
+
+          <div class="skill-group glass-card">
+            <h3>Professional Skills</h3>
+            <div class="skill-tags">
+              <span>Communication</span>
+              <span>Presentation</span>
+              <span>Teamwork</span>
+              <span>Project Planning</span>
+              <span>Problem Solving</span>
+              <span>Cross-cultural Communication</span>
+              <span>Adaptability</span>
+              <span>Leadership</span>
+              <span>Community Service</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Volunteering &amp; Service</p>
+          <h2>Service that teaches as much as it gives.</h2>
+        </div>
+
+        <blockquote>
+          “Service is not only about what we give to others, but also about what we learn from serving.”
+        </blockquote>
+      </section>
+
+      <section id="values" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">My Values</p>
+          <h2>Living with purpose and heart.</h2>
+        </div>
+
+        <div class="values-grid">
+          <span>Perseverance</span>
+          <span>Service</span>
+          <span>Learning</span>
+          <span>Curiosity</span>
+          <span>Responsibility</span>
+          <span>Cross-cultural understanding</span>
+          <span>Growth</span>
+        </div>
+
+        <div class="quote-placeholder glass-card">
+          <p>Jing Si-inspired reflection space</p>
+          <small>Authentic Jing Si Aphorism can be added later.</small>
+        </div>
+      </section>
+
+      <section id="interests" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Personal Interests</p>
+          <h2>Life beyond the classroom.</h2>
+        </div>
+
+        <div class="interest-board">
+          <div class="floating-card">🎨 Fashion sketching and drawing</div>
+          <div class="floating-card">📚 Reading crime novels</div>
+          <div class="floating-card">🏋️ Fitness and weight training</div>
+          <div class="floating-card">🌏 Exploring different cultures</div>
+          <div class="floating-card">🈶 Learning Mandarin</div>
+          <div class="floating-card">💻 Technology and programming</div>
+        </div>
+      </section>
+
+      <section id="future" class="container section-block">
+        <div class="section-heading">
+          <p class="overline">Where I’m Going</p>
+          <h2>Building a meaningful future with steady steps.</h2>
+        </div>
+
+        <div class="future-card glass-card">
+          <p>
+            Yola wants to continue developing professionally, gaining practical experience, and contributing to her community in Mozambique.
+            She hopes to use the knowledge gained through international study and life abroad to create meaningful impact and grow in ways that
+            serve not only herself but also the people around her.
+          </p>
+          <p>
+            Her future is guided by hope, realism, and responsibility. She is building a path that combines skill, service, and growth—one step
+            at a time.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="container section-block contact-section">
+        <div class="section-heading">
+          <p class="overline">Contact</p>
+          <h2>Let’s connect.</h2>
+        </div>
+
+        <div class="contact-card glass-card">
+          <p>Email</p>
+          <a href="mailto:114122108@gmail.com">114122108@gmail.com</a>
         </div>
       </section>
     </main>
 
-    <footer id="contact" class="site-footer">
+    <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-brand">AI NEXUS</div>
-        <p>© 2024 AI Agent Expert | Tzu Chi University</p>
-        <div class="footer-links">
-          <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://www.researchgate.net" target="_blank" rel="noreferrer">ResearchGate</a>
-        </div>
+        <p>© 2025 Yola Maganha</p>
+        <span>Learning. Serving. Creating. Growing.</span>
       </div>
     </footer>
 
