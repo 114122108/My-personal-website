@@ -1,5 +1,5 @@
 {
-  "name": "my-personal-website",
+  "name": "portfolio-react-app",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ogl": "^1.0.11",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
