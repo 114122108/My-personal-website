@@ -1302,6 +1302,11 @@ html.light .site-footer {
     display: flex;
   }
 
+  .nav-panel .theme-toggle {
+    flex: 0 0 42px;
+    align-self: flex-start;
+  }
+
   .nav-links {
     flex-direction: column;
     align-items: flex-start;

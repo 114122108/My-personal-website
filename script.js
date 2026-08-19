@@ -3,6 +3,29 @@ const navPanel = document.getElementById('nav-panel');
 const navLinks = document.querySelectorAll('.nav-links a');
 const timelineItems = document.querySelectorAll('.timeline-item');
 const contactForm = document.getElementById('contact-form');
+const themeToggle = document.getElementById('theme-toggle');
+
+const applyTheme = (theme) => {
+  const isLight = theme === 'light';
+  document.documentElement.classList.toggle('light', isLight);
+  document.documentElement.classList.toggle('dark', !isLight);
+
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    themeToggle.setAttribute('aria-pressed', String(isLight));
+    themeToggle.querySelector('span').textContent = isLight ? '◐' : '☼';
+  }
+};
+
+const savedTheme = localStorage.getItem('theme');
+const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+applyTheme(initialTheme);
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+  localStorage.setItem('theme', nextTheme);
+  applyTheme(nextTheme);
+});
 
 if (navToggleButton && navPanel) {
   navToggleButton.addEventListener('click', () => {
