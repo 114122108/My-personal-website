@@ -122,8 +122,8 @@ export default function App() {
       <main id="top" className="container page-shell">
         <section className="hero section-block">
           <div className="webthreads-background" aria-hidden="true">
-            <LiquidEther
-              colors={['#FF69D3', '#7EE7FF', '#FFFFFF']}
+              <LiquidEther
+              colors={['#0F766E', '#60A5FA', '#F8FAFC']}
               mouseForce={20}
               cursorSize={100}
               resolution={0.5}
@@ -153,7 +153,7 @@ export default function App() {
 
               <div className="cta-row">
                 <a href="#journey" className="button primary">Explore My Journey</a>
-                <a href="#experience" className="button secondary">View My Experience</a>
+                <a href="#projects" className="button secondary">View My Projects</a>
               </div>
 
               <div className="hero-meta">
