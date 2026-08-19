@@ -2,6 +2,7 @@ const navToggleButton = document.getElementById('nav-toggle');
 const navPanel = document.getElementById('nav-panel');
 const navLinks = document.querySelectorAll('.nav-links a');
 const timelineItems = document.querySelectorAll('.timeline-item');
+const contactForm = document.getElementById('contact-form');
 
 if (navToggleButton && navPanel) {
   navToggleButton.addEventListener('click', () => {
@@ -47,6 +48,22 @@ timelineItems.forEach((item) => {
     }
   });
 });
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const subject = String(formData.get('subject') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailto = `mailto:114122108@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+  });
+}
 
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
